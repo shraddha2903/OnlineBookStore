@@ -19,6 +19,10 @@ public class User {
 
     private String userName;
 
-    @OneToMany(mappedBy = "orderList",cascade = CascadeType.ALL)
-    private Order order;
+    private String email;
+
+    private String mobileNum;
+
+    @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    private List<Orders> orderList = new ArrayList<>();
 }

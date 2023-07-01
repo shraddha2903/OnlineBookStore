@@ -2,14 +2,14 @@ package com.example.OnlineBookStore.Models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Data
 
 public class Orders {
 
@@ -17,8 +17,9 @@ public class Orders {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
 
-    private Book books;
+    private Book book;
 
     @ManyToOne
-    private List<Orders> ordersList = new ArrayList<>();
+    @JoinColumn
+    private User user;
 }
