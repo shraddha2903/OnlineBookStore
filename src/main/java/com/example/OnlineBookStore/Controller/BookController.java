@@ -25,4 +25,24 @@ public class BookController {
 
     }
 
+    @GetMapping("/get-book-by-title")
+    public Book getByTitle(@RequestParam String title) throws Exception {
+        return bookService.getBookByTitle(title);
+    }
+
+    @GetMapping("/get-book-by-author")
+    public Book getByAuthor(@RequestParam String author) throws Exception {
+        return bookService.getBookByAuthor(author);
+    }
+    @GetMapping("/get-book-by-publication-date")
+    public Book getByPublication(@RequestParam String publication) throws Exception {
+        return bookService.getBookByPublication(publication);
+    }
+
+    @GetMapping("/get-book-by-price")
+    public Book getByPrice(@RequestParam String price) throws Exception {
+        return bookService.getBookByPrice(price);
+    }
+
+
 }
