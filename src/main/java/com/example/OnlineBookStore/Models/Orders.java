@@ -10,14 +10,14 @@ import java.util.List;
 
 @Entity
 @Data
-
+@Table(name = "orders")
 public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int orderId;
 
-    private Book book;
+    private String bookTitle;
 
     @ManyToOne
     @JoinColumn

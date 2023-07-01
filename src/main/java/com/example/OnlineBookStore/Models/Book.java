@@ -1,10 +1,7 @@
 package com.example.OnlineBookStore.Models;
 
 import com.example.OnlineBookStore.Enum.Genre;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +11,7 @@ import java.util.Date;
 
 @Entity
 @Data
+@Table(name = "book")
 public class Book {
 
     @Id
@@ -24,12 +22,12 @@ public class Book {
 
     private String author;
 
+    @Enumerated(EnumType.STRING)
     private Genre category;
 
     private int price;
 
     @CreationTimestamp
     private Date publicationDate;
-
 
 }

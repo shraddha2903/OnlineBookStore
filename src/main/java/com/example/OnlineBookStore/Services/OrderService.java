@@ -39,9 +39,10 @@ public class OrderService {
         User user1 = user.get();
         Book book1 = book.get();
 
+        String bookTitle = book1.getTitle();
+
         Orders orders = new Orders();
-        orders.setBook(book1);
-        orders.setBook(book1);
+        orders.setBookTitle(bookTitle);
 
         List<Orders> ordersList = user1.getOrderList();
         ordersList.add(orders);
